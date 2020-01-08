@@ -41,6 +41,7 @@ export const StyledPodcastCard = styled.div`
   flex-direction: column;
   padding: 1rem;
   border-radius: 3px;
+  transition: all 0.5s ease;
 
   &:hover {
     background-color: hsla(0, 0%, 50%, 0.1);

@@ -3,17 +3,33 @@ import ChannelGrid from '../containers/ChannelsGrid';
 import Podcast from '../components/Podcast';
 import Banner from '../components/Banner';
 
+import { SectionTitle } from './styles';
+
 const Channel = (props) => {
   const { channel, audioClips, childChannels } = props;
 
   return (
     <>
       <Layout title={channel.title}>
-        <Banner imageUrl={channel.urls.banner_image.original} />
+        <Banner
+          title={channel.title}
+          imageUrl={channel.urls.banner_image.original}
+          description={channel.description}
+        />
 
-        {childChannels.length > 0 && <ChannelGrid channels={childChannels} />}
+        {childChannels.length > 0 && (
+          <>
+            <SectionTitle>Podcasts</SectionTitle>
+            <ChannelGrid channels={childChannels} />
+          </>
+        )}
 
-        {audioClips.length > 0 && <Podcast audioClips={audioClips} />}
+        {audioClips.length > 0 && (
+          <>
+            <SectionTitle>Episodes</SectionTitle>
+            <Podcast audioClips={audioClips} />
+          </>
+        )}
       </Layout>
     </>
   );

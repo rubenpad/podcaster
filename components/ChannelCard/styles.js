@@ -5,6 +5,11 @@ export const Channel = styled.div`
   border-radius: 4px;
   margin-bottom: 0.5em;
   overflow: hidden;
+  transition: all 0.1s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const Image = styled.img`

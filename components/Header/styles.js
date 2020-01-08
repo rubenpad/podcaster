@@ -10,7 +10,10 @@ export const StyledHeader = styled.div`
 `;
 
 export const Anchor = styled.a`
+  font-weight: bold;
   font-size: 1.8rem;
   cursor: pointer;
-  color: #fff;
+  color: #1db954;
 `;
+
+

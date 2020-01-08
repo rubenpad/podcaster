@@ -12,7 +12,7 @@ const Podcast = (props) => {
         {audioClips.map((audioClip) => {
           const { id, title } = audioClip;
           return (
-            <Link href={`/podcast?id=${id}`} key={id}>
+            <Link href={`/player?id=${id}`} key={id}>
               <a>
                 <PodcastCard audioClip={audioClip} />
               </a>
