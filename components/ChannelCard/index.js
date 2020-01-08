@@ -9,7 +9,7 @@ const ChannelCard = (props) => {
   } = props.channel;
 
   return (
-    <Channel>
+    <Channel image={original}>
       <Image src={original} alt="Podcast cover" />
       <Title className="channel_title">{title}</Title>
     </Channel>

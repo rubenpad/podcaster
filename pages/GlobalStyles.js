@@ -23,7 +23,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-
+    background: linear-gradient(120deg, #0e242d, #121212);
+    letter-spacing: 1px;
   }
 
   ul { 

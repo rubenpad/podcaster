@@ -6,7 +6,7 @@ import ChannelsGrid from '../containers/ChannelsGrid';
 const Home = (props) => {
   const { channels } = props;
   return (
-    <Layout>
+    <Layout title="Podcaster">
       <ChannelsGrid channels={channels} />
     </Layout>
   );

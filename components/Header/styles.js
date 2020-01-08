@@ -3,11 +3,10 @@ import Link from 'next/link';
 
 export const StyledHeader = styled.div`
   width: 100%;
-  height: 80px;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   display: flex;
   align-items: center;
-  background: #040404;
+  background: transparent;
 `;
 
 export const Anchor = styled.a`
