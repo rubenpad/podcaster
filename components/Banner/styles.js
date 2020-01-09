@@ -21,6 +21,7 @@ export const ChannelTitle = styled.h1`
 `;
 
 export const ChannelDescription = styled.p`
+  text-align: left;
   font-size: 1.4rem;
   color: #fff;
   opacity: 0.9;

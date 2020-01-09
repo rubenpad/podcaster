@@ -1,11 +1,11 @@
-import Link from 'next/link';
+import { Link } from '../../routes';
 
 import { StyledHeader, Anchor } from './styles';
 
 const Header = () => {
   return (
     <StyledHeader>
-      <Link href="/">
+      <Link route="index">
         <Anchor>Podcaster</Anchor>
       </Link>
     </StyledHeader>

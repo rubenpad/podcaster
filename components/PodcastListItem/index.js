@@ -7,14 +7,14 @@ import {
   Action,
 } from './styles';
 
-const PodcastCard = (props) => {
-  const { audioClip } = props;
+const PodcastListItem = (props) => {
+  const { podcast } = props;
 
   return (
     <StyledPodcastCard>
-      <PodcastTitle>{audioClip.title}</PodcastTitle>
+      <PodcastTitle>{podcast.title}</PodcastTitle>
       <Description>
-        <TextDescription>{`${audioClip.description.slice(
+        <TextDescription>{`${podcast.description.slice(
           0,
           140
         )}...`}</TextDescription>
@@ -27,4 +27,4 @@ const PodcastCard = (props) => {
   );
 };
 
-export default PodcastCard;
+export default PodcastListItem;

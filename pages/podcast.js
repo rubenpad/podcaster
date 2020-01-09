@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { Link } from '../routes';
+import slug from '../helpers/slug';
 
 import Layout from '../components/Layout';
 import {
@@ -10,7 +11,7 @@ import {
   ButtonBack,
 } from './styles';
 
-const Player = (props) => {
+const Podcast = (props) => {
   const {
     episode: { title, urls, channel },
   } = props;
@@ -19,7 +20,13 @@ const Player = (props) => {
     <>
       <Layout title={title} />
       <StyledPlayer>
-        <Link href={`/channel?id=${channel.id}`}>
+        <Link
+          route="channel"
+          params={{
+            slug: slug(channel.title),
+            id: channel.id,
+          }}
+        >
           <a>
             <ButtonBack />
           </a>
@@ -34,7 +41,7 @@ const Player = (props) => {
   );
 };
 
-Player.getInitialProps = async ({ query }) => {
+Podcast.getInitialProps = async ({ query }) => {
   const { id } = query; // podcast episode id
   const response = await fetch(
     `https://api.audioboom.com/audio_clips/${id}.mp3`
@@ -43,4 +50,4 @@ Player.getInitialProps = async ({ query }) => {
   return { episode: body.audio_clip };
 };
 
-export default Player;
+export default Podcast;

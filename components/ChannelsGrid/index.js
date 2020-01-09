@@ -1,4 +1,6 @@
-import Link from 'next/link';
+import { Link } from '../../routes';
+import slug from '../../helpers/slug';
+
 import ChannelCard from '../../components/ChannelCard';
 import { Grid } from './styles';
 
@@ -8,7 +10,14 @@ const ChannelsGrid = (props) => {
   return (
     <Grid>
       {channels.map((channel) => (
-        <Link href={`/channel?id=${channel.id}`} key={channel.id}>
+        <Link
+          route="channel"
+          params={{
+            slug: slug(channel.title),
+            id: channel.id,
+          }}
+          key={channel.id}
+        >
           <a>
             <ChannelCard channel={channel} />
           </a>
