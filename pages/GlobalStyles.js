@@ -1,6 +1,6 @@
-import { createGlobalStyle, css, keyframes } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   ${css`
     @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
   `}
@@ -46,3 +46,5 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
   }
 `;
+
+export default GlobalStyle;
