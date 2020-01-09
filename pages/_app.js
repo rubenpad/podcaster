@@ -2,7 +2,7 @@ import App from 'next/app';
 import React from 'react';
 import PageNProgress from 'next-styled-nprogress';
 
-import { GlobalStyle } from './GlobalStyles';
+import GlobalStyle from './GlobalStyles';
 
 export default class MyApp extends App {
   render() {
