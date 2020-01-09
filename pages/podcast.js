@@ -9,7 +9,7 @@ import {
   EpisodeTitle,
   NowPlaying,
   ButtonBack,
-} from './styles';
+} from '../styles/styles';
 
 const Podcast = (props) => {
   const {

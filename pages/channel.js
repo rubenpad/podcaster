@@ -7,7 +7,7 @@ import PodcastList from '../components/PodcastList';
 import Banner from '../components/Banner';
 import PodcastPlayer from '../components/PodcastPlayer';
 
-import { SectionTitle, Modal } from './styles';
+import { SectionTitle, Modal } from '../styles/styles';
 
 const Channel = (props) => {
   const [podcastIsOpen, setPodcastIsOpen] = useState(null);
