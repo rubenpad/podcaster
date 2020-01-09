@@ -1,52 +1,40 @@
 import styled from 'styled-components';
-import { FaPlayCircle } from 'react-icons/fa';
 
-export const PlayButton = styled(FaPlayCircle)`
-  width: 30px;
-  height: 20px;
-  margin-right: 0.5rem;
+export const SectionTitle = styled.h1`
   color: #fff;
+  margin: 2rem 0 2rem 1.5rem;
 `;
 
-export const Action = styled.div`
-  align-self: flex-start;
-  display: flex;
-  align-items: center;
+export const PlayButton = styled.button`
+  padding: 1.5rem 2rem;
+  background: #1db954;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
   cursor: pointer;
 
-  span {
-    font-size: 1.4rem;
-    color: #fff;
+  &:hover {
+    opacity: 0.9;
   }
 `;
 
 export const PodcastTitle = styled.h3`
-  align-self: flex-start;
+  margin-left: 1rem;
   font-size: 1.6rem;
   color: #fff;
-  margin-bottom: 1rem;
 `;
 
-export const Description = styled.div``;
-
-export const TextDescription = styled.p`
-  font-size: 1.4rem;
-  color: #fff;
+export const StyledPodcastCard = styled.a`
   margin-bottom: 1rem;
-`;
-
-export const StyledPodcastCard = styled.div`
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
   padding: 1rem;
+  display: flex;
+  align-items: center;
   border-radius: 3px;
   transition: all 0.5s ease;
+  user-select: none;
 
   &:hover {
     background-color: hsla(0, 0%, 50%, 0.1);
-    * {
-      color: #1db954;
-    }
   }
 `;

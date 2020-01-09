@@ -1,19 +1,13 @@
 import styled from 'styled-components';
 import { FaArrowLeft } from 'react-icons/fa';
 
-export const SectionTitle = styled.h1`
-  color: #fff;
-  margin: 2rem 0 2rem 1.5rem;
-`;
-
-// Player styles
-
 export const ButtonBack = styled(FaArrowLeft)`
   font-size: 2rem;
   color: #fff;
   position: absolute;
-  top: 0;
+  top: 2rem;
   left: 2rem;
+  cursor: pointer;
 `;
 
 export const StyledPlayer = styled.div`
@@ -40,23 +34,14 @@ export const NowPlaying = styled.div`
 `;
 
 export const EpisodeTitle = styled.h2`
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #fff;
 `;
 
 export const Cover = styled.img`
   width: 240px;
   height: 240px;
+  border-radius: 3px;
   margin: 2rem 0;
   object-fit: cover;
-`;
-
-export const Modal = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 9999;
 `;

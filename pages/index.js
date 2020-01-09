@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-unfetch';
-import { useRouter } from 'next/router';
 
 import Layout from '../components/Layout';
 import ChannelsGrid from '../components/ChannelsGrid';

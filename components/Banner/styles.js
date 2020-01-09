@@ -21,6 +21,7 @@ export const ChannelTitle = styled.h1`
 `;
 
 export const ChannelDescription = styled.p`
+  padding: 1rem;
   text-align: left;
   font-size: 1.4rem;
   color: #fff;

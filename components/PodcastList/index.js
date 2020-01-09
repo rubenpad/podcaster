@@ -1,35 +1,25 @@
-import { Link } from '../../routes';
-import slug from '../../helpers/slug';
-
 import PodcastListItem from '../PodcastListItem';
-import { ContainerGrid } from './styles';
+import { Container } from './styles';
+import { SectionTitle } from '../PodcastList/styles';
 
 const PodcastList = (props) => {
-  const { podcasts } = props;
+  const { podcasts, handleOpenPodcast } = props;
 
   return (
     <>
-      <ContainerGrid>
+      <Container>
+        <SectionTitle>Episodes</SectionTitle>
         {podcasts.map((podcast) => {
           const { id } = podcast;
           return (
-            <Link
-              route="podcast"
-              params={{
-                slugChannel: slug(podcast.channel.title),
-                idChannel: podcast.channel.id,
-                slug: slug(podcast.title),
-                id: podcast.id,
-              }}
+            <PodcastListItem
+              handleOpenPodcast={handleOpenPodcast}
               key={id}
-            >
-              <a>
-                <PodcastListItem podcast={podcast} />
-              </a>
-            </Link>
+              podcast={podcast}
+            />
           );
         })}
-      </ContainerGrid>
+      </Container>
     </>
   );
 };

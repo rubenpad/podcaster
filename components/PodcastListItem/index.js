@@ -1,29 +1,17 @@
-import {
-  StyledPodcastCard,
-  PlayButton,
-  PodcastTitle,
-  Description,
-  TextDescription,
-  Action,
-} from './styles';
+import { StyledPodcastCard, PlayButton, PodcastTitle } from './styles';
 
 const PodcastListItem = (props) => {
-  const { podcast } = props;
+  const { podcast, handleOpenPodcast } = props;
 
   return (
-    <StyledPodcastCard>
-      <PodcastTitle>{podcast.title}</PodcastTitle>
-      <Description>
-        <TextDescription>{`${podcast.description.slice(
-          0,
-          140
-        )}...`}</TextDescription>
-      </Description>
-      <Action>
-        <PlayButton />
-        <span>Play episode</span>
-      </Action>
-    </StyledPodcastCard>
+    <>
+      <StyledPodcastCard>
+        <PlayButton onClick={(e) => handleOpenPodcast(e, podcast)}>
+          Play
+        </PlayButton>
+        <PodcastTitle>{podcast.title}</PodcastTitle>
+      </StyledPodcastCard>
+    </>
   );
 };
 

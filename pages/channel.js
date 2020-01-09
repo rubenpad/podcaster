@@ -1,13 +1,27 @@
+import { useState } from 'react';
 import Error from 'next/error';
 
 import Layout from '../components/Layout';
 import ChannelGrid from '../components/ChannelsGrid';
 import PodcastList from '../components/PodcastList';
 import Banner from '../components/Banner';
+import PodcastPlayer from '../components/PodcastPlayer';
 
-import { SectionTitle } from './styles';
+import { SectionTitle, Modal } from './styles';
 
 const Channel = (props) => {
+  const [podcastIsOpen, setPodcastIsOpen] = useState(null);
+
+  const handleOpenPodcast = (e, podcast) => {
+    e.preventDefault();
+    setPodcastIsOpen(podcast);
+  };
+
+  const handleClosePodcast = (e, podcast) => {
+    e.preventDefault();
+    setPodcastIsOpen(null);
+  };
+
   const { channel, podcasts, childChannels, statusCode } = props;
 
   if (statusCode !== 200) return <Error statusCode={statusCode} />;
@@ -21,6 +35,15 @@ const Channel = (props) => {
           description={channel.description}
         />
 
+        {podcastIsOpen && (
+          <Modal>
+            <PodcastPlayer
+              handleClosePodcast={handleClosePodcast}
+              podcast={podcastIsOpen}
+            />
+          </Modal>
+        )}
+
         {childChannels.length > 0 && (
           <>
             <SectionTitle>Podcasts</SectionTitle>
@@ -30,8 +53,10 @@ const Channel = (props) => {
 
         {podcasts.length > 0 && (
           <>
-            <SectionTitle>Episodes</SectionTitle>
-            <PodcastList podcasts={podcasts} />
+            <PodcastList
+              podcasts={podcasts}
+              handleOpenPodcast={handleOpenPodcast}
+            />
           </>
         )}
       </Layout>
