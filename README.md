@@ -10,14 +10,14 @@
 
 2. Navigate into your new folder and install dependencies 🔍
 
-- `cd podcaster && yarn install`
+- `cd podcaster && npm install`
 
 3. Development ⛏
 
-- `yarn dev`
+- `npm run dev`
 
 4. Production 🔥
 
-- `yarn build && yarn start`
+- `npm run build && npm run start`
 
 License MIT
